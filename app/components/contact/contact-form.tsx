@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
-import { submitContactForm } from "../actions"
+import { submitContactForm } from "../../actions"
 import { useTranslation } from "react-i18next"
 
 export default function ContactForm() {

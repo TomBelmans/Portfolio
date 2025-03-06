@@ -3,21 +3,27 @@
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail} from "lucide-react"
 import Link from "next/link"
-import ContactForm from "./components/contact-form"
-import ProjectCard from "./components/project-card"
-import TechStack from "./components/tech-stack"
+import ContactForm from "./components/contact/contact-form"
+import ProjectCard from "./components/project/project-card"
+import TechStack from "./components/techStack/tech-stack"
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useTranslation } from "react-i18next"
-import { ProjectsSection } from "@/components/projects-section"
+import { ProjectsSection } from "@/app/components/project/projects-section"
+import {useEffect, useState} from 'react'
+import {StudiesSection} from '@/app/components/studies/studies-section'
 
 export default function Page() {
   const { t } = useTranslation()
-  const currentYear = new Date().getFullYear()
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center">
+    <div suppressHydrationWarning={true} className="min-h-screen bg-background flex flex-col items-center">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center max-w-screen-xl mx-auto">
           <div className="mr-4 hidden md:flex">
@@ -28,6 +34,9 @@ export default function Page() {
               <Link href="#about" className="transition-colors hover:text-foreground/80">
                 {t("about")}
               </Link>
+              <Link href="#studies" className="transition-colors hover:text-foreground/80">
+                {t("studie")}
+              </Link>
               <Link href="#projects" className="transition-colors hover:text-foreground/80">
                 {t("projects")}
               </Link>
@@ -37,9 +46,10 @@ export default function Page() {
             </nav>
           </div>
           <div className="ml-auto flex items-center gap-4">
-            <LanguageSwitcher />
-            <ThemeToggle />
-            <Button variant="outline">{t("resume")}</Button>
+            <Button className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400"
+                    variant="outline">{t('resume')}</Button>
+            <ThemeToggle/>
+            <LanguageSwitcher/>
           </div>
         </div>
       </header>
@@ -50,7 +60,8 @@ export default function Page() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span
-                    className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">{t('fullStackDeveloper')}</span></h1>
+                    className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">{t('fullStackDeveloper')}</span>
+                </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
                   {t('heroDescription')}
                 </p>
@@ -85,6 +96,12 @@ export default function Page() {
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="studies" className="py-12 md:py-24 lg:py-32">
+          <div className="mx-auto max-w-4xl">
+            <StudiesSection />
           </div>
         </section>
 
@@ -132,4 +149,3 @@ export default function Page() {
     </div>
   )
 }
-

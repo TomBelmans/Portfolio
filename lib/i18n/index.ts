@@ -9,6 +9,7 @@ const resources = {
     translation: {
       // Navigation
       about: "About",
+      studie: "Education",
       projects: "Projects",
       contact: "Contact",
       resume: "Resume",
@@ -92,6 +93,46 @@ const resources = {
       devops: "DevOps",
       tools: "Tools",
 
+      // Studies section
+      studies: {
+        title: "Education",
+        timeline: "Educational Timeline",
+        degree: "Degree",
+        institution: "Institution",
+        duration: "Duration",
+        description: "Description",
+        items: [
+          {
+            degree: "Associates degree in Software and Application Development",
+            institution: "Thomas More Kempen",
+            location: "Geel, Belgium",
+            duration: "2022 - 2025",
+            description: "Focused on the fundamentals of software engineering and programming principles.",
+            courses: [
+              "Object-Oriented Programming",
+              "Database Systems",
+              "Web Development",
+              "Software Engineering",
+            ],
+          },
+          {
+            degree: "Mechanical Design Techniques",
+            institution: "Sint-Paulus Technical Institute",
+            location: "Mol, Belgium",
+            duration: "1992 - 1998",
+            description: "Technical education focused on mechanical processing and design, CNC machining, and blueprint reading.",
+            courses: [
+              "Turning",
+              "Milling",
+              "AutoCAD",
+              "Geometry",
+              "Pneumatics",
+              "Hydraulics",
+            ],
+          },
+        ],
+      },
+
       // Contact section
       getInTouch: "Get in Touch",
       name: "Name",
@@ -112,6 +153,7 @@ const resources = {
     translation: {
       // Navigation
       about: "À propos",
+      studie: "Éducation",
       projects: "Projets",
       contact: "Contact",
       resume: "Currículum Vitae",
@@ -204,6 +246,46 @@ const resources = {
       devops: "DevOps",
       tools: "Outils",
 
+      // Studies section
+      studies: {
+        title: "Éducation",
+        timeline: "Parcours Éducatif",
+        degree: "Diplôme",
+        institution: "Institution",
+        duration: "Durée",
+        description: "Description",
+        items: [
+          {
+            degree: "Diplôme d'associé en développement de logiciels et d'applications",
+            institution: "Thomas More Kempen",
+            location: "Geel, Belgique",
+            duration: "2022 - 2025",
+            description: "Axé sur les fondamentaux de l'ingénierie logicielle et les principes de programmation.",
+            courses: [
+              "Programmation orientée objet",
+              "Systèmes de bases de données",
+              "Développement Web",
+              "Ingénierie logicielle",
+            ],
+          },
+          {
+            degree: "Techniques de conception mécanique",
+            institution: "Institut Technique Sint-Paulus",
+            location: "Mol, Belgique",
+            duration: "1992 - 1998",
+            description: "Formation technique axée sur le traitement mécanique et la conception, la programmation CNC et la lecture de plans.",
+            courses: [
+              "Tournage",
+              "Fraisage",
+              "AutoCAD",
+              "Géométrie",
+              "Pneumatique",
+              "Hydraulique",
+            ],
+          },
+        ],
+      },
+
       // Contact section
       getInTouch: "Contactez-moi",
       name: "Nom",
@@ -224,6 +306,7 @@ const resources = {
     translation: {
       // Navigation
       about: "Über",
+      studie: "Ausbildung",
       projects: "Projekte",
       contact: "Kontakt",
       resume: "Lebenslauf",
@@ -312,6 +395,46 @@ const resources = {
       devops: "DevOps",
       tools: "Tools",
 
+      // Studies section
+      studies: {
+        title: "Ausbildung",
+        timeline: "Bildungsweg",
+        degree: "Abschluss",
+        institution: "Institution",
+        duration: "Zeitraum",
+        description: "Beschreibung",
+        items: [
+          {
+            degree: "Associierter Abschluss in Software- und Anwendungsentwicklung",
+            institution: "Thomas More Kempen",
+            location: "Geel, Belgien",
+            duration: "2022 - 2025",
+            description: "Fokussiert auf die Grundlagen der Softwareentwicklung und Programmierprinzipien.",
+            courses: [
+              "Objektorientierte Programmierung",
+              "Datenbanksysteme",
+              "Webentwicklung",
+              "Softwaretechnik",
+            ],
+          },
+          {
+            degree: "Mechanische Gestaltungstechniken",
+            institution: "Technisches Institut Sint-Paulus",
+            location: "Mol, Belgien",
+            duration: "1992 - 1998",
+            description: "Technische Ausbildung mit Schwerpunkt auf mechanischer Bearbeitung und Gestaltung, CNC-Bearbeitung und dem Lesen von Bauplänen.",
+            courses: [
+              "Drehen",
+              "Fräsen",
+              "AutoCAD",
+              "Geometrie",
+              "Pneumatik",
+              "Hydraulik",
+            ],
+          },
+        ],
+      },
+
       // Contact section
       getInTouch: "Kontakt aufnehmen",
       name: "Name",
@@ -332,6 +455,7 @@ const resources = {
     translation: {
       // Navigation
       about: "Over",
+      studie: "Opleiding",
       projects: "Projecten",
       contact: "Contact",
       resume: "Currículum Vitae",
@@ -417,6 +541,39 @@ const resources = {
       backend: "Backend",
       devops: "DevOps",
       tools: "Tools",
+
+      // Studies section
+      studies: {
+        title: "Opleiding",
+        timeline: "Opleidingstraject",
+        degree: "Diploma",
+        institution: "Instelling",
+        duration: "Periode",
+        description: "Beschrijving",
+        items: [
+          {
+            degree: "Graduaat Software- en applicatieontwikkeling",
+            institution: "Thomas More Kempen",
+            location: "Geel, België",
+            duration: "2022 - 2025",
+            description: "Gericht op software engineering fundamenten en programmeringsprincipes.",
+            courses: [
+              "Objectgeoriënteerd Programmeren",
+              "Databasesystemen",
+              "Webontwikkeling",
+              "Software Engineering",
+            ],
+          },
+          {
+            degree: "Mechanische vormgevingstechnieken",
+            institution: "Technisch Instituut Sint-Paulus",
+            location: "Mol, België",
+            duration: "1992 - 1998",
+            description: "Technische opleiding met een focus op mechanische bewerking en vormgeving, CNC en planlezen.",
+            courses: ["Draaien", "Frezen", "AutoCAD", "Meetkunde", "Pneumatica", "Hydraulica"],
+          },
+        ],
+      },
 
       // Contact section
       getInTouch: "Neem Contact Op",

@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ProjectCard } from "@/components/project-card"
-import { ProjectDetailModal } from "@/components/project-detail-modal"
+import { ProjectCard } from "@/app/components/project/(project)/project-card"
+import { ProjectDetailModal } from "@/app/components/project/(project)/project-detail-modal"
 import { useTranslation } from "react-i18next"
 
 // Define project IDs and their URLs

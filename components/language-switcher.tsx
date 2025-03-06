@@ -18,10 +18,11 @@ export function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Globe className="h-[1.2rem] w-[1.2rem]" />
-          <span className="sr-only">Switch language</span>
-        </Button>
+          <Button variant="outline" size="icon" className="flex gap-2 w-auto">
+              <Globe className="h-[1.2rem] w-[1.2rem] ml-2" />
+              <span className="hidden sm:inline-block mr-2">{languages.find(lang => lang.code === i18n.language)?.name}</span>
+              <span className="sr-only">Switch language</span>
+          </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {languages.map((language) => (
