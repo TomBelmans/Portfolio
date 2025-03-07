@@ -6,15 +6,23 @@ import { useTranslation } from "react-i18next"
 const technologies = [
   {
     category: "frontend",
-    skills: ["React", "Next.js", "TypeScript", "TailwindCSS", "Redux", "GraphQL"],
+    skills: ["HTML", "CSS", "JavaScript", "ASP.NET", ".NET MAUI", "React Vite","React Native", "Expo", "Next.js", "TypeScript"],
   },
   {
     category: "backend",
-    skills: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB"],
+    skills: ["C#", "Node.js", "Microsoft SQL", "MariaDb", "PostgreSQL", "MongoDB"],
   },
   {
     category: "devops",
     skills: ["Docker", "AWS", "CI/CD", "Git", "Linux", "Nginx"],
+  },
+  {
+    category: "tools",
+    skills: ["VS Code", "JetBrains Webstorm", "Postman", "Figma", "Azure Data Studio", "GitHub", "Vercel"],
+  },
+  {
+    category: "tools",
+    skills: ["VS Code", "JetBrains Webstorm", "Postman", "Figma", "Jest", "GitHub", "Vercel"],
   },
   {
     category: "tools",

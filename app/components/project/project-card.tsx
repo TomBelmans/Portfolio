@@ -1,53 +1,62 @@
 "use client"
-
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Github } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { useTranslation } from "react-i18next"
 
 interface ProjectCardProps {
-  title: string
-  description: string
-  image: string
-  link: string
-  tags: string[]
+    projectId: string
+    onClick: () => void
 }
 
-export default function ProjectCard({ title, description, image, link, tags }: ProjectCardProps) {
-  const { t } = useTranslation()
+export function ProjectCard({ projectId, onClick }: ProjectCardProps) {
+    const { t } = useTranslation()
 
-  return (
-    <Card className="overflow-hidden">
-      <div className="relative aspect-video">
-        <Image
-          src={image || "/placeholder.svg"}
-          alt={title}
-          fill
-          className="object-cover transition-transform hover:scale-105"
-        />
-      </div>
-      <CardContent className="p-4">
-        <h3 className="font-semibold text-xl mb-2">{title}</h3>
-        <p className="text-sm text-muted-foreground mb-4">{description}</p>
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="inline-flex items-center rounded-md bg-muted px-2 py-1 text-xs font-medium ring-1 ring-inset ring-gray-500/10"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </CardContent>
-      <CardFooter className="p-4 pt-0">
-        <Link href={link} target="_blank" className="inline-flex items-center gap-2 text-sm hover:underline">
-          <Github className="h-4 w-4" />
-          {t("viewOnGithub")}
-        </Link>
-      </CardFooter>
-    </Card>
-  )
+    // Safely get technologies as an array with fallback
+    const getTechnologies = (): string[] => {
+        try {
+            const techs = t(`projectDetails.${projectId}.technologies`, { returnObjects: true })
+            return Array.isArray(techs) ? techs.filter((tech): tech is string => typeof tech === 'string') : []
+        } catch (error) {
+            console.error("Error getting technologies:", error)
+            return []
+        }
+    }
+
+    const technologies = getTechnologies()
+
+    return (
+        <Card
+            className="overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-lg"
+            onClick={onClick}
+        >
+            <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                    src={`/placeholder.svg?height=400&width=600`}
+                    alt={t(`projectDetails.${projectId}.title`)}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+            </div>
+            <CardContent className="p-4">
+                <h3 className="text-xl font-bold mb-2">{t(`projectDetails.${projectId}.title`)}</h3>
+                <p className="text-muted-foreground mb-4">{t(`projectDetails.${projectId}.shortDescription`)}</p>
+                <div className="flex flex-wrap gap-2">
+                    {technologies.slice(0, 3).map((tag: string) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                            {tag}
+                        </Badge>
+                    ))}
+                    {technologies.length > 3 && (
+                        <Badge variant="outline" className="text-xs">
+                            +{technologies.length - 3} more
+                        </Badge>
+                    )}
+                </div>
+            </CardContent>
+            <CardFooter className="px-4 pb-4 pt-0">
+                <p className="text-sm text-muted-foreground">{t("projectDetails.viewDetails")}</p>
+            </CardFooter>
+        </Card>
+    )
 }
-

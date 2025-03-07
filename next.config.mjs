@@ -9,6 +9,7 @@ try {
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
+    output: 'standalone',
   },
   typescript: {
     ignoreBuildErrors: true,
@@ -23,6 +24,7 @@ const nextConfig = {
   },
 }
 
+module.exports = nextConfig;
 mergeConfig(nextConfig, userConfig)
 
 function mergeConfig(nextConfig, userConfig) {
