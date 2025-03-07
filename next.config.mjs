@@ -23,7 +23,6 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig;
 mergeConfig(nextConfig, userConfig)
 
 function mergeConfig(nextConfig, userConfig) {
