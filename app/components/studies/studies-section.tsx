@@ -57,7 +57,7 @@ export function StudiesSection() {
                                     <CardContent className="p-6">
                                         <p className="mb-4">{study.description}</p>
                                         <div className="space-y-2">
-                                            <h4 className="font-medium">{t("studies.courses", "Key Courses")}:</h4>
+                                            <h4 className="font-medium">{t("studies.course")}:</h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {study.courses.map((course: string, idx: number) => (
                                                     <Badge key={idx} variant="secondary">

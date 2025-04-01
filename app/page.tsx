@@ -14,12 +14,19 @@ import {useEffect, useState} from 'react'
 import {StudiesSection} from '@/app/components/studies/studies-section'
 
 export default function Page() {
-  const { t } = useTranslation()
+  const { t, ready } = useTranslation()
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
+    setMounted(true);
   }, []);
+
+  // Don't render until translations and client-side mounting are ready
+  if (!mounted || !ready) {
+    return null; // or a loading spinner
+  }
 
   return (
     <div suppressHydrationWarning={true} className="min-h-screen bg-background flex flex-col items-center">
@@ -30,16 +37,16 @@ export default function Page() {
               <span className="hidden font-bold sm:inline-block">Tom Belmans</span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link href="#about" className="transition-colors hover:text-foreground/80">
+              <Link key="about" href="#about" className="transition-colors hover:text-foreground/80">
                 {t("about")}
               </Link>
-              <Link href="#studies" className="transition-colors hover:text-foreground/80">
+              <Link key="studies" href="#studies" className="transition-colors hover:text-foreground/80">
                 {t("studie")}
               </Link>
-              <Link href="#projects" className="transition-colors hover:text-foreground/80">
+              <Link key="projects" href="#projects" className="transition-colors hover:text-foreground/80">
                 {t("projects")}
               </Link>
-              <Link href="#contact" className="transition-colors hover:text-foreground/80">
+              <Link key="contact" href="#contact" className="transition-colors hover:text-foreground/80">
                 {t("contact")}
               </Link>
             </nav>
@@ -78,22 +85,28 @@ export default function Page() {
                     <span className="sr-only">LinkedIn</span>
                   </Button>
                 </Link>
-                <Link href="mailto:tom.belmans@gmail.com">
+                <Link href="mailto:tom.belmans@proton.me">
                   <Button variant="outline" size="icon">
                     <Mail className="h-4 w-4" />
                     <span className="sr-only">Email</span>
                   </Button>
                 </Link>
               </div>
-              <div className="relative w-[500px] h-[500px] mt-8">
-                <Image
-                  src="/placeholder.svg?height=300&width=300"
-                  alt={t("profilePictureAlt")}
-                  fill
-                  className="object-cover rounded-2xl"
-                  priority
-                />
-              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="md:py-12 lg:py-12">
+          <div className="mx-auto max-w-4xl">
+            <div className="relative w-[80%] max-w-[500px] mx-auto">
+              <Image
+                src="/misc/image/TomBelmans.png"
+                alt={t("profilePictureAlt")}
+                width={300}
+                height={300}
+                className="rounded-2xl w-full h-auto"
+                priority
+              />
             </div>
           </div>
         </section>

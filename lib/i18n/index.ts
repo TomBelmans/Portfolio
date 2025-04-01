@@ -101,6 +101,7 @@ const resources = {
         institution: "Institution",
         duration: "Duration",
         description: "Description",
+        course: "Subjects",
         items: [
           {
             degree: "Associates degree in Software and Application Development",
@@ -254,6 +255,7 @@ const resources = {
         institution: "Institution",
         duration: "Durée",
         description: "Description",
+        course: "Sujets",
         items: [
           {
             degree: "Diplôme d'associé en développement de logiciels et d'applications",
@@ -403,6 +405,7 @@ const resources = {
         institution: "Institution",
         duration: "Zeitraum",
         description: "Beschreibung",
+        course: "Themen",
         items: [
           {
             degree: "Associierter Abschluss in Software- und Anwendungsentwicklung",
@@ -550,6 +553,7 @@ const resources = {
         institution: "Instelling",
         duration: "Periode",
         description: "Beschrijving",
+        course: "Vakken",
         items: [
           {
             degree: "Graduaat Software- en applicatieontwikkeling",

@@ -1,18 +1,28 @@
 "use server"
 
 export async function submitContactForm(formData: FormData) {
-  // Simulate a delay
-  await new Promise((resolve) => setTimeout(resolve, 1000))
-
   const name = formData.get("name")
   const email = formData.get("email")
   const message = formData.get("message")
 
-  // Here you would typically send an email or save to a database
-  console.log("Form submission:", { name, email, message })
-
-  return {
-    message: "Thanks for your message! I'll get back to you soon.",
+  const emailData = {
+    to: "email",
+    from: "tom.belmans@proton.me",
+    subject: "Contact via homepagina",
+    body: `${name} heeft het volgende bericht achtergelaten:\n\n${message}`,
   }
-}
 
+  const response = await fetch("/api/send-email", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(emailData),
+  })
+
+  if (!response.ok) {
+    throw new Error("Failed to send email")
+  }
+
+  return response.json()
+}
