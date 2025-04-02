@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next"
 import { ProjectsSection } from "@/app/components/project/projects-section"
 import {useEffect, useState} from 'react'
 import {StudiesSection} from '@/app/components/studies/studies-section'
+import ExperienceSection from '@/app/components/workExperience/work-exprience'
 
 export default function Page() {
   const { t, ready } = useTranslation()
@@ -42,6 +43,9 @@ export default function Page() {
               </Link>
               <Link key="studies" href="#studies" className="transition-colors hover:text-foreground/80">
                 {t("studie")}
+              </Link>
+              <Link key="experience" href="#experience" className="transition-colors hover:text-foreground/80">
+                {t("experience")}
               </Link>
               <Link key="projects" href="#projects" className="transition-colors hover:text-foreground/80">
                 {t("projects")}
@@ -114,6 +118,15 @@ export default function Page() {
         <section id="studies" className="py-12 md:py-24 lg:py-32">
           <div className="mx-auto max-w-4xl">
             <StudiesSection />
+          </div>
+        </section>
+
+        <section id="experience" className="py-12 md:py-24 lg:py-32">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">
+              {t('experienceTitle')}
+            </h2>
+            <ExperienceSection />
           </div>
         </section>
 
