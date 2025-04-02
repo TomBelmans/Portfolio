@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Tom Belmans | Full Stack Developer & Software Engineer",
   description:
       "Portfolio van Tom Belmans, ervaren Full Stack Developer gespecialiseerd in webontwikkeling, softwareontwikkeling en moderne technologieën. Bekijk projecten, vaardigheden en ervaring.",
+  icons: {
+    icon: "/favicon.ico",
+  },
   authors: [
     {
       name: "Tom Belmans",
