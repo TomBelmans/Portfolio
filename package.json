@@ -52,18 +52,19 @@
     "lucide-react": "^0.454.0",
     "next": "latest",
     "next-themes": "latest",
-    "node-mailjet": "^6.0.8",
     "react": "^18",
     "react-day-picker": "8.10.1",
     "react-dom": "^18",
     "react-hook-form": "^7.54.1",
     "react-i18next": "latest",
     "react-resizable-panels": "^2.1.7",
+    "react-tsparticles": "^2.12.2",
     "react-typical": "^0.1.3",
     "recharts": "2.15.0",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
+    "tsparticles": "^3.8.1",
     "typescript": "latest",
     "vaul": "^0.9.6",
     "zod": "^3.24.1"
@@ -80,6 +81,11 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "sharp"
+    ],
+    "ignoredBuiltDependencies": [
+      "@tsparticles/engine",
+      "react-tsparticles",
+      "tsparticles-engine"
     ]
   }
 }

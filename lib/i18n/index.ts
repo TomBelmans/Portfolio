@@ -6,6 +6,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 // Translation resources
 const resources = {
     en: {
+        language: 'en',
         translation: {
             // Navigation
             about: 'About',
@@ -147,9 +148,10 @@ const resources = {
                             'Web Development',
                             'Software Engineering',
                         ],
+                        logo: "/misc/image/TM_metaimage.png"
                     },
                     {
-                        degree: 'Mechanical Design Techniques',
+                        degree: 'Technical degree in Mechanical Design Techniques',
                         institution: 'Sint-Paulus Technical Institute',
                         location: 'Mol, Belgium',
                         duration: '1992 - 1998',
@@ -162,6 +164,7 @@ const resources = {
                             'Pneumatics',
                             'Hydraulics',
                         ],
+                        logo: "/misc/image/TISP_Mol.png"
                     },
                 ],
             },
@@ -183,6 +186,7 @@ const resources = {
         },
     },
     fr: {
+        language: 'fr',
         translation: {
             // Navigation
             about: 'À propos',
@@ -333,9 +337,10 @@ const resources = {
                             'Développement Web',
                             'Ingénierie logicielle',
                         ],
+                        logo: "/misc/image/TM_metaimage.png"
                     },
                     {
-                        degree: 'Techniques de conception mécanique',
+                        degree: 'EST Techniques de conception mécanique',
                         institution: 'Institut Technique Sint-Paulus',
                         location: 'Mol, Belgique',
                         duration: '1992 - 1998',
@@ -348,6 +353,7 @@ const resources = {
                             'Pneumatique',
                             'Hydraulique',
                         ],
+                        logo: "/misc/image/TISP_Mol.png"
                     },
                 ],
             },
@@ -369,6 +375,7 @@ const resources = {
         },
     },
     de: {
+        language: 'de',
         translation: {
             // Navigation
             about: 'Über',
@@ -515,9 +522,10 @@ const resources = {
                             'Webentwicklung',
                             'Softwaretechnik',
                         ],
+                        logo: "/misc/image/TM_metaimage.png"
                     },
                     {
-                        degree: 'Mechanische Gestaltungstechniken',
+                        degree: 'TKS Mechanische Gestaltungstechniken',
                         institution: 'Technisches Institut Sint-Paulus',
                         location: 'Mol, Belgien',
                         duration: '1992 - 1998',
@@ -530,6 +538,7 @@ const resources = {
                             'Pneumatik',
                             'Hydraulik',
                         ],
+                        logo: "/misc/image/TISP_Mol.png"
                     },
                 ],
             },
@@ -551,6 +560,7 @@ const resources = {
         },
     },
     nl: {
+        language: 'nl',
         translation: {
             // Navigation
             about: 'Over',
@@ -695,14 +705,16 @@ const resources = {
                             'Webontwikkeling',
                             'Software Engineering',
                         ],
+                        logo: "/misc/image/TM_metaimage.png"
                     },
                     {
-                        degree: 'Mechanische vormgevingstechnieken',
+                        degree: 'TSO Mechanische vormgevingstechnieken',
                         institution: 'Technisch Instituut Sint-Paulus',
                         location: 'Mol, België',
                         duration: '1992 - 1998',
                         description: 'Technische opleiding met een focus op mechanische bewerking en vormgeving, CNC en planlezen.',
                         courses: ['Draaien', 'Frezen', 'AutoCAD', 'Meetkunde', 'Pneumatica', 'Hydraulica'],
+                        logo: "/misc/image/TISP_Mol.png"
                     },
                 ],
             },

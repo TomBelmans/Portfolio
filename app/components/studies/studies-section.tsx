@@ -38,7 +38,12 @@ export function StudiesSection() {
                             <div key={index} className="grid grid-cols-2 gap-12 items-start">
                                 <div className={`text-right ${index % 2 === 1 ? "order-2" : ""}`}>
                                     <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background" />
-                                    <h3 className="text-xl font-bold">{study.degree}</h3>
+                                    <div className="flex items-center justify-end gap-2">
+                                        {study.logo && (
+                                            <img src={study.logo} alt={`${study.degree} logo`} className="max-w-16 max-h-12" />
+                                        )}
+                                        <h3 className="text-xl font-bold">{study.degree}</h3>
+                                    </div>
                                     <div className="flex items-center justify-end mt-2 text-muted-foreground">
                                         <GraduationCap className="w-4 h-4 mr-1" />
                                         <span>{study.institution}</span>
